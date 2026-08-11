@@ -47,9 +47,7 @@ def main():
         not ghost_entries,
         f'not in any prompt file: {ghost_entries}',
     )
-    unknown_classes = sorted(
-        {cls for cls in TEMPLATE_CLASS.values() if cls not in BUDGET_CLASSES}
-    )
+    unknown_classes = sorted({cls for cls in TEMPLATE_CLASS.values() if cls not in BUDGET_CLASSES})
     check('every declared class exists', not unknown_classes, f'unknown: {unknown_classes}')
 
     print('\n-- every max_tokens sits under its class ceiling --')

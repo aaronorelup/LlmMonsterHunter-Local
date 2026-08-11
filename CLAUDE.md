@@ -26,6 +26,7 @@ when he wants detail.
 PYTHONIOENCODING=utf-8 ./venv/Scripts/python.exe -m backend.tests.test_evolution   # one suite
 ./venv/Scripts/python.exe -m pytest                 # all offline suites
 ./venv/Scripts/python.exe -m ruff check backend setup tools   # lint
+./venv/Scripts/python.exe -m ruff format backend setup tools  # format (CI checks this)
 ./venv/Scripts/python.exe tools/check_file_sizes.py # 500-line ceiling
 PYTHONIOENCODING=utf-8 ./venv/Scripts/python.exe -m backend.tests.eval report  # LLM scoreboard from play logs
 

@@ -109,8 +109,7 @@ def update_llm_settings(payload: dict[str, Any]) -> dict[str, Any]:
                 return error_response('Switching to DeepSeek needs a model - fetch or type one')
             if not context_window:
                 return error_response(
-                    f"'{model}' is not a model this game knows - "
-                    'set its context window manually'
+                    f"'{model}' is not a model this game knows - set its context window manually"
                 )
 
         new_value = {

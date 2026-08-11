@@ -14,9 +14,7 @@ from typing import Any, Optional
 from .report import EVAL_PREFIX, aggregate, fetch_records, render_table, template_catalog
 
 
-def select_source_rows(
-    names: list[str], per_template: int
-) -> dict[str, list]:
+def select_source_rows(names: list[str], per_template: int) -> dict[str, list]:
     """The latest N completed GAME generations per template - the most
     recent prompts are the ones closest to what the game sends today."""
 
@@ -149,7 +147,5 @@ def _resolve_names(arguments) -> Optional[list[str]]:
         return [part.strip() for part in arguments.name.split(',') if part.strip()]
     if arguments.category:
         catalog = template_catalog()
-        return [
-            name for name, meta in catalog.items() if meta['category'] == arguments.category
-        ]
+        return [name for name, meta in catalog.items() if meta['category'] == arguments.category]
     return None
