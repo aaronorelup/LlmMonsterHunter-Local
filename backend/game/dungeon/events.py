@@ -55,9 +55,7 @@ def assign_random_event(include_returning: bool = False) -> str:
         return scripted
 
     weight_map = dict(EVENT_WEIGHTS)
-    weight_map['monster_battle'] = danger_knob(
-        'battle_event_weight', weight_map['monster_battle']
-    )
+    weight_map['monster_battle'] = danger_knob('battle_event_weight', weight_map['monster_battle'])
     events = list(weight_map.keys())
     weights = list(weight_map.values())
     if include_returning:

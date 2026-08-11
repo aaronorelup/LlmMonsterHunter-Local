@@ -58,9 +58,7 @@ def main():
         if column_exists(db, 'monsters', 'temperament'):
             print('Column monsters.temperament already exists - nothing to add.')
         else:
-            db.session.execute(
-                text('ALTER TABLE monsters ADD COLUMN temperament VARCHAR(20) NULL')
-            )
+            db.session.execute(text('ALTER TABLE monsters ADD COLUMN temperament VARCHAR(20) NULL'))
             db.session.commit()
             print('Added column monsters.temperament (VARCHAR(20), NULL).')
 

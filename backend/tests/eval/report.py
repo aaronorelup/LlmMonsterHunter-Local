@@ -187,9 +187,7 @@ def render_table(stats: list[dict[str, Any]]) -> str:
     header = '  '.join(title.ljust(width) for _, title, width in _COLUMNS)
     lines = [header, '-' * len(header)]
     for row in stats:
-        lines.append(
-            '  '.join(_cell(row[key], width) for key, _, width in _COLUMNS)
-        )
+        lines.append('  '.join(_cell(row[key], width) for key, _, width in _COLUMNS))
     lines.append('-' * len(header))
     lines.append(f'{len(stats)} template(s), {sum(row["runs"] for row in stats)} generation(s)')
     return '\n'.join(lines)
